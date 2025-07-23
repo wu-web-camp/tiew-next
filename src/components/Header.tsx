@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="w-full bg-white dark:bg-gray-900 shadow mb-8">
-      <nav className="max-w-4xl mx-auto flex items-center justify-between py-4 px-4">
+    <header className="w-full bg-white/80 backdrop-blur border-b border-blue-50">
+      <nav className="max-w-5xl mx-auto flex items-center justify-between py-6 px-6">
         <div className="flex items-center gap-8">
-          <Link href="/" className="text-xl font-bold text-blue-600 dark:text-blue-400">Trip Planner</Link>
-          <Link href="/my-trip" className="text-gray-700 dark:text-gray-200 hover:underline">My Trip</Link>
+          <Link href="/" className="text-lg font-semibold text-blue-500 tracking-tight">Trip Planner</Link>
+          <Link href="/my-trip" className="text-gray-500 hover:text-blue-400 transition">My Trip</Link>
         </div>
-        <span className="rounded px-3 py-1 border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100">☀️</span>
+        <span className="rounded px-3 py-1 bg-blue-50 text-blue-400 text-lg">☀️</span>
       </nav>
     </header>
   );
