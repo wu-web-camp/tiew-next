@@ -1,22 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trip Planner (Minimal Travel UI)
+
+A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. Users can plan trips, view their saved trips, and enjoy a clean, modern, travel-inspired interface.
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## User Flow
+
+```mermaid
+flowchart TD
+    A[Home Page: Trip Planner] -->|Fill Form| B[Trip Plan Generation]
+    B -->|Show Plan| A
+    A -->|Click 'My Trip'| C[My Trip Page]
+    C -->|View Trip Details| D[Trip Details Modal/Page]
+    C -->|Back to Home| A
+    %% UI Section
+    %% Backend (future): B
+```
+
+---
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
