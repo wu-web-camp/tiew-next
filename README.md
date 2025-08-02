@@ -4,6 +4,25 @@ A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. User
 
 ## Getting Started
 
+### Environment Setup
+
+Create a `.env.local` file in the root directory and configure your API settings:
+
+```env
+# API Configuration
+NEXT_PUBLIC_API_BASE_URL=https://your-api-domain.com/api
+NEXT_PUBLIC_API_TOKEN=your-api-token-here
+
+# For Supabase Edge Functions (example):
+# NEXT_PUBLIC_API_BASE_URL=https://your-project.supabase.co/functions/v1
+# NEXT_PUBLIC_API_TOKEN=your-supabase-anon-key
+
+# For local development:
+# NEXT_PUBLIC_API_BASE_URL=http://localhost:3001/api
+```
+
+### Installation
+
 First, run the development server:
 
 ```bash
