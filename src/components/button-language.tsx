@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from "react";
+import { useAtom } from "jotai";
+import { languageAtom } from "../store/language"; // Adjust the import path as necessary
 
 const ButtonLanguage = () => {
-const [language, setLanguage] = useState('th'); // Default to Thai
+const [language, setLanguage] = useAtom(languageAtom);
   return (
     <button className="hover:text-[#A54141] transition-colors" onClick={() => setLanguage(language === 'th' ? 'en' : 'th')}>
       {language === 'th' ? 'ภาษาไทย' : 'English'}
