@@ -4,56 +4,56 @@ export default function GalleryTrip() {
   const destinations = [
     {
       id: 1,
-      name: "Tokyo, Japan",
-      image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=2000",
+      name: "หาดถ้ำพระนาง ",
+      image: "https://www.ananda.co.th/blog/thegenc/wp-content/uploads/2024/03/%E0%B8%94%E0%B8%B5%E0%B9%84%E0%B8%8B%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD-2024-05-23T123322.980.png",
       orientation: "horizontal" // 4:3
     },
     {
       id: 2,
-      name: "Paris, France",
-      image: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "เกาะราชา",
+      image: "https://www.ananda.co.th/blog/thegenc/wp-content/uploads/2024/03/%E0%B8%94%E0%B8%B5%E0%B9%84%E0%B8%8B%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD-2024-05-23T123623.816.png",
       orientation: "vertical" // 3:4
     },
     {
       id: 3,
-      name: "Bali, Indonesia",
-      image: "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=800",
+      name: "หาดไร่เลย์",
+      image: "https://www.ananda.co.th/blog/thegenc/wp-content/uploads/2024/03/934-x-550-px-15.png",
       orientation: "square" // 1:1
     },
     {
       id: 4,
-      name: "New York, USA",
-      image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800",
+      name: "ถ้ำมรกต เกาะมุก",
+      image: "https://www.ananda.co.th/blog/thegenc/wp-content/uploads/2024/03/%E0%B8%94%E0%B8%B5%E0%B9%84%E0%B8%8B%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD-2024-05-23T124232.412.png",
       orientation: "vertical" // 3:4
     },
     {
       id: 5,
-      name: "Seoul, South Korea",
-      image: "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800",
+      name: "ไร่ชาฉุยฟง",
+      image: "https://www.ananda.co.th/blog/thegenc/wp-content/uploads/2024/03/%E0%B8%94%E0%B8%B5%E0%B9%84%E0%B8%8B%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD-2024-05-23T124844.757.png",
       orientation: "horizontal" // 4:3
     },
     {
       id: 6,
-      name: "London, England",
-      image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800",
+      name: "สกายวอล์ค ทะเลหมอกอัยเยอร์เวง",
+      image: "https://www.ananda.co.th/blog/thegenc/wp-content/uploads/2024/03/%E0%B8%94%E0%B8%B5%E0%B9%84%E0%B8%8B%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD-2024-05-23T125100.590.png",
       orientation: "tall" // 2:3
     },
     {
       id: 7,
-      name: "Rome, Italy",
-      image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1096&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "ดอยอ่างขาง",
+      image: "https://www.ananda.co.th/blog/thegenc/wp-content/uploads/2024/03/934-x-550-px-24.png",
       orientation: "horizontal" // 4:3
     },
     {
       id: 8,
-      name: "Barcelona, Spain",
-      image: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800",
+      name: "สามพันโบก",
+      image: "https://www.ananda.co.th/blog/thegenc/wp-content/uploads/2024/03/%E0%B8%94%E0%B8%B5%E0%B9%84%E0%B8%8B%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD-2024-05-23T125306.040.png",
       orientation: "square" // 1:1
     },
     {
       id: 9,
-      name: "Dubai, UAE",
-      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800",
+      name: "ภูชี้ฟ้า",
+      image: "https://www.ananda.co.th/blog/thegenc/wp-content/uploads/2024/03/934-x-550-px-26.png",
       orientation: "vertical" // 3:4
     }
   ];
