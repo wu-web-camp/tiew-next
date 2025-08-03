@@ -135,16 +135,13 @@ export default function Header() {
               <button className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                 เข้าสู่ระบบ
               </button>
-              <button className="bg-[#A54141] hover:bg-[#8B3636] text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm">
+              <Link
+                href="/signup"
+                className="bg-[#A54141] hover:bg-[#8B3636] text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm"
+              >
                 สมัครสมาชิก
-              </button>
-              
-              {/* Theme Button */}
-              <ThemeToggle />
+              </Link>
             </div>
-
-            {/* Mobile Menu */}
-            <MobileMenu />
           </div>
         </div>
       </div>

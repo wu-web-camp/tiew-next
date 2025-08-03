@@ -14,6 +14,7 @@ A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. User
 - **Hero Section**: Engaging landing page with call-to-action buttons
 - **Mobile Menu**: Hamburger menu for mobile devices with contact info
 - **Dropdown Navigation**: Hover dropdown for additional information
+- **Thai Language Support**: Sarabun font for Thai text rendering
 
 ### 🚀 Core Functionality
 - **Trip Planning**: Create and manage travel itineraries
@@ -21,6 +22,18 @@ A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. User
 - **Customer Management**: Manage customer information and statistics
 - **Modern UI**: Clean, intuitive interface with smooth animations
 - **Theme Persistence**: Theme preference saved in localStorage
+- **User Authentication**: Sign up and login functionality
+- **Contact System**: Integrated contact form and live chat
+
+## Recent Updates
+
+### Build Fixes (Latest)
+- ✅ Fixed unescaped apostrophe in introduction page (`We've` → `We&apos;ve`)
+- ✅ Replaced `<img>` with Next.js `<Image>` component for better performance
+- ✅ Removed unused `error` variable in `useTripPlanner` hook
+- ✅ All ESLint warnings and errors resolved
+- ✅ Build now passes successfully with no errors or warnings
+- ✅ Added Thai Sarabun font support for better Thai text rendering
 
 ## Getting Started
 
@@ -81,11 +94,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - **Footer**: Site footer (to be implemented)
 - **Layout**: Main app layout with providers
 
+### Authentication Components
+- **SignupPage**: User registration form with Thai language support
+- **Contact**: Contact form with live chat functionality
+
 ## User Flow
 
 ```mermaid
 flowchart TD
-    A[Home Page] -->|Click Navigation| B[Various Pages]
+    A[Home Page: Hero Section] -->|Click Action Buttons| B[Sign Up/Login/Contact]
     B -->|Trip Planner| C[Plan Trip]
     B -->|Customers| D[Manage Customers]
     B -->|My Trip| E[View Trips]
@@ -98,6 +115,67 @@ flowchart TD
     %% UI Section
     %% Backend (future): C, D, E
 ```
+
+## Features
+
+### Trip Planning
+- Interactive trip planning form
+- Save and view trip details
+- Modern, responsive UI
+
+### Contributors
+- Dynamic contributor listing from `contribute/` directory
+- Server-side file reading using Next.js server actions
+- Responsive grid layout with contributor cards
+- Automatic sorting and error handling
+
+### User Authentication
+- Complete signup form with profile picture upload
+- Form validation and error handling
+- Thai language interface
+
+## Color Scheme
+
+The application uses a custom red theme with the following color palette:
+- **Primary Red**: `#A54141` - Main brand color
+- **Hover Red**: `#8B3636` - Interactive states (darker shade)
+- **Light Red**: `#F5F0F0` - Background accents
+- **Gradient Red**: `from-[#A54141] to-[#8B3636]` - CTA sections
+- **Neutral**: Gray tones for text and borders
+- **White**: Clean backgrounds and contrast
+
+## Theme System
+
+### Available Themes
+1. **Light Theme**: Default theme with white background and dark text
+2. **Dark Theme**: Dark background with light text and red accents
+
+### Theme Features
+- **Persistent Storage**: Theme preference saved in localStorage
+- **Smooth Transitions**: CSS transitions for theme changes
+- **Icon Indicators**: Different icons for each theme state
+- **Mobile Support**: Theme toggle available in mobile menu
+
+## Design Features
+
+### Header Design
+- **Top Bar**: Contact information and utility links
+- **Main Header**: Logo, navigation, and action buttons
+- **Hover Effects**: Subtle underline animations on navigation
+- **Dropdown Menu**: Additional information with hover states
+- **Mobile Responsive**: Collapsible menu with contact info
+- **Theme Toggle**: Icon button for switching themes
+
+### Button Styles
+- **Primary**: #A54141 background with white text
+- **Secondary**: #A54141 border with #A54141 text
+- **Tertiary**: Text-only with hover effects
+- **Consistent Spacing**: Uniform padding and margins
+
+### Typography
+- **Thai Font**: Sarabun font for Thai text with proper weight variants
+- **English Font**: Geist Sans for English text
+- **Monospace**: Geist Mono for code and technical content
 
 ## Navigation Features
 
@@ -115,7 +193,7 @@ flowchart TD
 
 ---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font) and [Sarabun](https://fonts.google.com/specimen/Sarabun) fonts.
 
 ## Learn More
 
