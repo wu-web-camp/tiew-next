@@ -1,6 +1,26 @@
 # Trip Planner (Minimal Travel UI)
 
-A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. Users can plan trips, view their saved trips, and enjoy a clean, modern, travel-inspired interface.
+A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. Users can plan trips, view their saved trips, and enjoy a clean, modern, travel-inspired interface with theme switching and active navigation.
+
+## Features
+
+### 🎨 Design & UI
+- **Custom Red Theme**: Professional red color scheme using #A54141
+- **Theme Switching**: Toggle between Light and Dark themes
+- **Two-Tier Header**: Top bar with contact info and main navigation
+- **Active Navigation**: Visual feedback for current page with hover effects
+- **Responsive Design**: Mobile-first approach with responsive components
+- **Action Buttons**: Interactive buttons for "ติดต่อเรา", "สมัครสมาชิก", "เข้าสู่ระบบ"
+- **Hero Section**: Engaging landing page with call-to-action buttons
+- **Mobile Menu**: Hamburger menu for mobile devices with contact info
+- **Dropdown Navigation**: Hover dropdown for additional information
+
+### 🚀 Core Functionality
+- **Trip Planning**: Create and manage travel itineraries
+- **Trip Management**: View and organize saved trips
+- **Customer Management**: Manage customer information and statistics
+- **Modern UI**: Clean, intuitive interface with smooth animations
+- **Theme Persistence**: Theme preference saved in localStorage
 
 ## Getting Started
 
@@ -32,6 +52,17 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Pages
+
+### Main Pages
+- **Home Page** (`/`): Landing page with hero section and features
+- **Trip Planner** (`/trip-planner`): Create and plan travel itineraries
+- **Customers** (`/customers`): Manage customer information and statistics
+- **My Trip** (`/my-trip`): View and manage saved trips
+- **About** (`/about`): Company information
+- **Contact** (`/contact`): Contact information
+- **Help** (`/help`): Support and help center
+
 ## Components
 
 ### Header Components
@@ -54,14 +85,33 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ```mermaid
 flowchart TD
-    A[Home Page: Trip Planner] -->|Fill Form| B[Trip Plan Generation]
-    B -->|Show Plan| A
-    A -->|Click 'My Trip'| C[My Trip Page]
-    C -->|View Trip Details| D[Trip Details Modal/Page]
-    C -->|Back to Home| A
+    A[Home Page] -->|Click Navigation| B[Various Pages]
+    B -->|Trip Planner| C[Plan Trip]
+    B -->|Customers| D[Manage Customers]
+    B -->|My Trip| E[View Trips]
+    B -->|About/Contact/Help| F[Info Pages]
+    C -->|Save Trip| E
+    D -->|View Stats| G[Customer Statistics]
+    E -->|Back to Home| A
+    A -->|Click Theme Button| H[Switch Theme]
+    H -->|Light/Dark| A
     %% UI Section
-    %% Backend (future): B
+    %% Backend (future): C, D, E
 ```
+
+## Navigation Features
+
+### Active State
+- **Visual Feedback**: Current page highlighted with red color and background
+- **Underline Animation**: Smooth underline animation on hover and active state
+- **Mobile Support**: Active state works in mobile menu
+- **Dropdown Support**: Active state for dropdown menu items
+
+### Hover Effects
+- **Color Transition**: Smooth color transition on hover
+- **Background Change**: Subtle background color change
+- **Underline Animation**: Animated underline that appears on hover
+- **Consistent Design**: Same hover effects across desktop and mobile
 
 ---
 
