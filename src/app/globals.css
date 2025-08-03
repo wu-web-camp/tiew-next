@@ -50,6 +50,6 @@ body {
 }
 
 /* Thai Sarabun font utility */
-.font-sarabun {
+.font-thai {
   font-family: var(--font-sarabun), "Sarabun", sans-serif;
 }

@@ -1,8 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 import ThemeToggle from "./ThemeToggle";
+import ButtonLanguage from "./button-language";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
+    return false;
+  };
+
   return (
     <header className="bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto">
@@ -15,12 +27,8 @@ export default function Header() {
                 <span>📧 support@tiewnext.com</span>
               </div>
               <div className="hidden sm:flex items-center space-x-4">
-                <button className="hover:text-[#A54141] transition-colors">
-                  ช่วยเหลือ
-                </button>
-                <button className="hover:text-[#A54141] transition-colors">
-                  ภาษาไทย
-                </button>
+                <button className="hover:text-[#A54141] transition-colors">ช่วยเหลือ</button>
+                <ButtonLanguage />
               </div>
             </div>
           </div>
@@ -44,33 +52,57 @@ export default function Header() {
 
             {/* Navigation - Desktop */}
             <nav className="hidden lg:flex space-x-8">
-              <Link
-                href="/"
-                className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
+              <Link 
+                href="/" 
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group ${
+                  isActive("/") 
+                    ? "text-[#A54141] bg-[#F5F0F0]" 
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}
               >
                 หน้าแรก
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#A54141] transition-all duration-200 group-hover:w-full"></div>
+                <div className={`absolute bottom-0 left-0 h-0.5 bg-[#A54141] transition-all duration-200 ${
+                  isActive("/") ? "w-full" : "w-0 group-hover:w-full"
+                }`}></div>
               </Link>
-              <Link
-                href="/trip-planner"
-                className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
+              <Link 
+                href="/trip-planner" 
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group ${
+                  isActive("/trip-planner") 
+                    ? "text-[#A54141] bg-[#F5F0F0]" 
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}
               >
                 วางแผนทริป
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#A54141] transition-all duration-200 group-hover:w-full"></div>
+                <div className={`absolute bottom-0 left-0 h-0.5 bg-[#A54141] transition-all duration-200 ${
+                  isActive("/trip-planner") ? "w-full" : "w-0 group-hover:w-full"
+                }`}></div>
               </Link>
-              <Link
-                href="/client"
-                className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
+              <Link 
+                href="/client" 
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group ${
+                  isActive("/client") 
+                    ? "text-[#A54141] bg-[#F5F0F0]" 
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}
               >
                 ลูกค้า
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#A54141] transition-all duration-200 group-hover:w-full"></div>
+                <div className={`absolute bottom-0 left-0 h-0.5 bg-[#A54141] transition-all duration-200 ${
+                  isActive("/client") ? "w-full" : "w-0 group-hover:w-full"
+                }`}></div>
               </Link>
-              <Link
-                href="/my-trip"
-                className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
+              <Link 
+                href="/my-trip" 
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group ${
+                  isActive("/my-trip") 
+                    ? "text-[#A54141] bg-[#F5F0F0]" 
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}
               >
                 ทริปของฉัน
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#A54141] transition-all duration-200 group-hover:w-full"></div>
+                <div className={`absolute bottom-0 left-0 h-0.5 bg-[#A54141] transition-all duration-200 ${
+                  isActive("/my-trip") ? "w-full" : "w-0 group-hover:w-full"
+                }`}></div>
               </Link>
               <Link
                 href="/subscribe"
@@ -80,7 +112,11 @@ export default function Header() {
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#A54141] transition-all duration-200 group-hover:w-full"></div>
               </Link>
               <div className="relative group">
-                <button className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">
+                <button className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center ${
+                  isActive("/about") || isActive("/contact") || isActive("/help")
+                    ? "text-[#A54141] bg-[#F5F0F0]" 
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}>
                   ข้อมูลเพิ่มเติม
                   <svg
                     className="w-4 h-4 ml-1"
@@ -104,10 +140,11 @@ export default function Header() {
                     >
                       เกี่ยวกับเรา
                     </Link>
-                    <Link
-                      href="/contact"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5F0F0] hover:text-[#A54141]"
-                    >
+                    <Link href="/about/introduction" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5F0F0] hover:text-[#A54141]">
+                      แนะนำเว็บไซต์
+                    </Link>
+
+                    <Link href="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5F0F0] hover:text-[#A54141]">
                       ติดต่อเรา
                     </Link>
                     <Link
@@ -126,16 +163,13 @@ export default function Header() {
               <button className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                 เข้าสู่ระบบ
               </button>
-              <button className="bg-[#A54141] hover:bg-[#8B3636] text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm">
+              <Link
+                href="/signup"
+                className="bg-[#A54141] hover:bg-[#8B3636] text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm"
+              >
                 สมัครสมาชิก
-              </button>
-
-              {/* Theme Button */}
-              <ThemeToggle />
+              </Link>
             </div>
-
-            {/* Mobile Menu */}
-            <MobileMenu />
           </div>
         </div>
       </div>
