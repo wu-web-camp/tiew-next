@@ -111,7 +111,14 @@ export default function MobileMenu() {
               >
                 ทริปของฉัน
               </Link>
-              
+              <Link
+                href="/subscribe"
+                className="block text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                แผน
+              </Link>
+
               {/* Additional Info Dropdown */}
               <div className="space-y-2">
                 <div className={`px-3 py-2 text-base font-medium ${
@@ -170,7 +177,7 @@ export default function MobileMenu() {
               <button className="w-full bg-[#A54141] hover:bg-[#8B3636] text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm">
                 สมัครสมาชิก
               </button>
-              
+
               {/* Theme Button - Mobile */}
               <ThemeToggle showText={true} />
             </div>
@@ -179,4 +186,4 @@ export default function MobileMenu() {
       )}
     </div>
   );
-} 
+}
