@@ -1,6 +1,6 @@
 # Trip Planner (Minimal Travel UI)
 
-A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. Users can plan trips, view their saved trips, and enjoy a clean, modern, travel-inspired interface with a beautiful custom red theme (#A54141) and theme switching functionality.
+A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. Users can plan trips, view their saved trips, and enjoy a clean, modern, travel-inspired interface with theme switching and active navigation.
 
 ## Features
 
@@ -8,6 +8,7 @@ A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. User
 - **Custom Red Theme**: Professional red color scheme using #A54141
 - **Theme Switching**: Toggle between Light and Dark themes
 - **Two-Tier Header**: Top bar with contact info and main navigation
+- **Active Navigation**: Visual feedback for current page with hover effects
 - **Responsive Design**: Mobile-first approach with responsive components
 - **Action Buttons**: Interactive buttons for "ติดต่อเรา", "สมัครสมาชิก", "เข้าสู่ระบบ"
 - **Hero Section**: Engaging landing page with call-to-action buttons
@@ -18,6 +19,7 @@ A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. User
 ### 🚀 Core Functionality
 - **Trip Planning**: Create and manage travel itineraries
 - **Trip Management**: View and organize saved trips
+- **Customer Management**: Manage customer information and statistics
 - **Modern UI**: Clean, intuitive interface with smooth animations
 - **Theme Persistence**: Theme preference saved in localStorage
 - **User Authentication**: Sign up and login functionality
@@ -63,6 +65,17 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Pages
+
+### Main Pages
+- **Home Page** (`/`): Landing page with hero section and features
+- **Trip Planner** (`/trip-planner`): Create and plan travel itineraries
+- **Customers** (`/customers`): Manage customer information and statistics
+- **My Trip** (`/my-trip`): View and manage saved trips
+- **About** (`/about`): Company information
+- **Contact** (`/contact`): Contact information
+- **Help** (`/help`): Support and help center
+
 ## Components
 
 ### Header Components
@@ -90,18 +103,17 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ```mermaid
 flowchart TD
     A[Home Page: Hero Section] -->|Click Action Buttons| B[Sign Up/Login/Contact]
-    A -->|Click 'วางแผนทริป'| C[Trip Planner Page]
-    C -->|Fill Form| D[Trip Plan Generation]
-    D -->|Show Plan| C
-    A -->|Click 'ทริปของฉัน'| E[My Trip Page]
-    E -->|View Trip Details| F[Trip Details Modal/Page]
+    B -->|Trip Planner| C[Plan Trip]
+    B -->|Customers| D[Manage Customers]
+    B -->|My Trip| E[View Trips]
+    B -->|About/Contact/Help| F[Info Pages]
+    C -->|Save Trip| E
+    D -->|View Stats| G[Customer Statistics]
     E -->|Back to Home| A
-    A -->|Click Theme Button| G[Switch Theme]
-    G -->|Light/Dark| A
-    A -->|View Contributors| H[Contributors Page]
-    H -->|List Contributors| I[Contributor Cards]
+    A -->|Click Theme Button| H[Switch Theme]
+    H -->|Light/Dark| A
     %% UI Section
-    %% Backend (future): D
+    %% Backend (future): C, D, E
 ```
 
 ## Features
@@ -164,6 +176,20 @@ The application uses a custom red theme with the following color palette:
 - **Thai Font**: Sarabun font for Thai text with proper weight variants
 - **English Font**: Geist Sans for English text
 - **Monospace**: Geist Mono for code and technical content
+
+## Navigation Features
+
+### Active State
+- **Visual Feedback**: Current page highlighted with red color and background
+- **Underline Animation**: Smooth underline animation on hover and active state
+- **Mobile Support**: Active state works in mobile menu
+- **Dropdown Support**: Active state for dropdown menu items
+
+### Hover Effects
+- **Color Transition**: Smooth color transition on hover
+- **Background Change**: Subtle background color change
+- **Underline Animation**: Animated underline that appears on hover
+- **Consistent Design**: Same hover effects across desktop and mobile
 
 ---
 
