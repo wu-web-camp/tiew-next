@@ -12,6 +12,24 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Light Theme (Default) */
+[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #A54141;
+  --primary-hover: #8B3636;
+  --accent: #F5F0F0;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #ff6b6b;
+  --primary-hover: #ff5252;
+  --accent: #2d2d2d;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -23,4 +41,14 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme transition animations */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.font-thai {
+  font-family: var(--font-sarabun), sans-serif;
 }
