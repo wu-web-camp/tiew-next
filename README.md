@@ -41,9 +41,24 @@ flowchart TD
     A -->|Click 'My Trip'| C[My Trip Page]
     C -->|View Trip Details| D[Trip Details Modal/Page]
     C -->|Back to Home| A
+    A -->|View Contributors| E[Contributors Page]
+    E -->|List Contributors| F[Contributor Cards]
     %% UI Section
     %% Backend (future): B
 ```
+
+## Features
+
+### Trip Planning
+- Interactive trip planning form
+- Save and view trip details
+- Modern, responsive UI
+
+### Contributors
+- Dynamic contributor listing from `contribute/` directory
+- Server-side file reading using Next.js server actions
+- Responsive grid layout with contributor cards
+- Automatic sorting and error handling
 
 ---
 
