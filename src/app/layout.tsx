@@ -17,10 +17,12 @@ const geistMono = Geist_Mono({
 });
 
 const sarabun = Sarabun({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["thai"],
   variable: "--font-sarabun",
+  subsets: ["thai", "latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
+
+
 
 export default function RootLayout({
   children,

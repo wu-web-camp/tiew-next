@@ -15,12 +15,17 @@ export default function SignupPage() {
     profilePicture: null as File | null,
   });
 
+  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+    // Clear message when user starts typing
+    if (message) setMessage(null);
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,10 +36,74 @@ export default function SignupPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setMessage(null);
+
+    // Validate password match
+    if (formData.password !== formData.confirmPassword) {
+      setMessage({ type: 'error', text: 'รหัสผ่านไม่ตรงกัน กรุณาตรวจสอบอีกครั้ง' });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Validate password length
+    if (formData.password.length < 6) {
+      setMessage({ type: 'error', text: 'รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร' });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // Create user data object (excluding profilePicture for localStorage)
+      const userData = {
+        id: Date.now().toString(), // Simple ID generation
+        username: formData.username,
+        email: formData.email,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        phoneNumber: formData.phoneNumber,
+        password: formData.password, // In real app, this should be hashed
+        createdAt: new Date().toISOString(),
+        profilePictureUrl: formData.profilePicture ? URL.createObjectURL(formData.profilePicture) : null
+      };
+
+      // Get existing users from localStorage
+      const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
+      
+      // Check if username or email already exists
+      const userExists = existingUsers.find((user: any) => 
+        user.username === formData.username || user.email === formData.email
+      );
+
+      if (userExists) {
+        setMessage({ type: 'error', text: 'ชื่อผู้ใช้หรืออีเมลนี้มีอยู่ในระบบแล้ว' });
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Add new user to array
+      existingUsers.push(userData);
+      
+      // Save back to localStorage
+      localStorage.setItem('users', JSON.stringify(existingUsers));
+      
+      // Set current user session
+      localStorage.setItem('currentUser', JSON.stringify(userData));
+      
+      setMessage({ type: 'success', text: 'สมัครสมาชิกสำเร็จ! กำลังนำคุณไปยังหน้าหลัก...' });
+      
+      // Redirect to home page after 2 seconds
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 2000);
+
+    } catch (error) {
+      setMessage({ type: 'error', text: 'เกิดข้อผิดพลาดในการสมัครสมาชิก กรุณาลองใหม่อีกครั้ง' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -49,6 +118,17 @@ export default function SignupPage() {
           
           {/* Form */}
           <div className="px-6 py-8">
+            {/* Message Display */}
+            {message && (
+              <div className={`mb-6 p-4 rounded-lg font-thai ${
+                message.type === 'success' 
+                  ? 'bg-green-100 border border-green-400 text-green-700' 
+                  : 'bg-red-100 border border-red-400 text-red-700'
+              }`}>
+                {message.text}
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Profile Picture */}
               <div>
@@ -177,7 +257,7 @@ export default function SignupPage() {
                   value={formData.password}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors font-thai"
-                  placeholder="กรอกรหัสผ่านของคุณ"
+                  placeholder="กรอกรหัสผ่านของคุณ (อย่างน้อย 6 ตัวอักษร)"
                   required
                 />
               </div>
@@ -202,9 +282,14 @@ export default function SignupPage() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-red-600 to-[#A54141] text-white font-semibold rounded-lg hover:from-red-700 hover:to-[#8A3535] active:shadow-lg active:shadow-red-300/50 transition-all duration-200 font-thai"
+                disabled={isSubmitting}
+                className={`w-full px-6 py-3 text-white font-semibold rounded-lg transition-all duration-200 font-thai ${
+                  isSubmitting 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : 'bg-gradient-to-r from-red-600 to-[#A54141] hover:from-red-700 hover:to-[#8A3535] active:shadow-lg active:shadow-red-300/50'
+                }`}
               >
-                ส่งข้อมูล
+                {isSubmitting ? 'กำลังสมัคร...' : 'สมัคร'}
               </button>
             </form>
 

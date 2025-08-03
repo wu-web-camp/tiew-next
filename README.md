@@ -13,12 +13,15 @@ A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. User
 - **Hero Section**: Engaging landing page with call-to-action buttons
 - **Mobile Menu**: Hamburger menu for mobile devices with contact info
 - **Dropdown Navigation**: Hover dropdown for additional information
+- **Thai Language Support**: Sarabun font for Thai text rendering
 
 ### 🚀 Core Functionality
 - **Trip Planning**: Create and manage travel itineraries
 - **Trip Management**: View and organize saved trips
 - **Modern UI**: Clean, intuitive interface with smooth animations
 - **Theme Persistence**: Theme preference saved in localStorage
+- **User Authentication**: Sign up and login functionality
+- **Contact System**: Integrated contact form and live chat
 
 ## Recent Updates
 
@@ -28,6 +31,7 @@ A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. User
 - ✅ Removed unused `error` variable in `useTripPlanner` hook
 - ✅ All ESLint warnings and errors resolved
 - ✅ Build now passes successfully with no errors or warnings
+- ✅ Added Thai Sarabun font support for better Thai text rendering
 
 ## Getting Started
 
@@ -77,22 +81,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - **Footer**: Site footer (to be implemented)
 - **Layout**: Main app layout with providers
 
+### Authentication Components
+- **SignupPage**: User registration form with Thai language support
+- **Contact**: Contact form with live chat functionality
+
 ## User Flow
 
 ```mermaid
 flowchart TD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    A[Home Page: Trip Planner] -->|Fill Form| B[Trip Plan Generation]
-    B -->|Show Plan| A
-    A -->|Click 'My Trip'| C[My Trip Page]
-    C -->|View Trip Details| D[Trip Details Modal/Page]
-    C -->|Back to Home| A
-    A -->|View Contributors| E[Contributors Page]
-    E -->|List Contributors| F[Contributor Cards]
-=======
-=======
->>>>>>> c5e93fbbda1bda30a2707ea5741ae46e7bc8c6ab
     A[Home Page: Hero Section] -->|Click Action Buttons| B[Sign Up/Login/Contact]
     A -->|Click 'วางแผนทริป'| C[Trip Planner Page]
     C -->|Fill Form| D[Trip Plan Generation]
@@ -102,16 +98,12 @@ flowchart TD
     E -->|Back to Home| A
     A -->|Click Theme Button| G[Switch Theme]
     G -->|Light/Dark| A
-<<<<<<< HEAD
->>>>>>> c5e93fb (create header)
-=======
->>>>>>> c5e93fbbda1bda30a2707ea5741ae46e7bc8c6ab
+    A -->|View Contributors| H[Contributors Page]
+    H -->|List Contributors| I[Contributor Cards]
     %% UI Section
     %% Backend (future): D
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## Features
 
 ### Trip Planning
@@ -124,9 +116,12 @@ flowchart TD
 - Server-side file reading using Next.js server actions
 - Responsive grid layout with contributor cards
 - Automatic sorting and error handling
-=======
-=======
->>>>>>> c5e93fbbda1bda30a2707ea5741ae46e7bc8c6ab
+
+### User Authentication
+- Complete signup form with profile picture upload
+- Form validation and error handling
+- Thai language interface
+
 ## Color Scheme
 
 The application uses a custom red theme with the following color palette:
@@ -164,14 +159,15 @@ The application uses a custom red theme with the following color palette:
 - **Secondary**: #A54141 border with #A54141 text
 - **Tertiary**: Text-only with hover effects
 - **Consistent Spacing**: Uniform padding and margins
-<<<<<<< HEAD
->>>>>>> c5e93fb (create header)
-=======
->>>>>>> c5e93fbbda1bda30a2707ea5741ae46e7bc8c6ab
+
+### Typography
+- **Thai Font**: Sarabun font for Thai text with proper weight variants
+- **English Font**: Geist Sans for English text
+- **Monospace**: Geist Mono for code and technical content
 
 ---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font) and [Sarabun](https://fonts.google.com/specimen/Sarabun) fonts.
 
 ## Learn More
 
