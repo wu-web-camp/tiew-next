@@ -13,23 +13,6 @@ export default function Login() {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [showPassword, setShowPassword] = useState(false);
 
-  const validatePassword = (password: string) => {
-    const errors = [];
-    if (password.length < 8) {
-      errors.push("รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร");
-    }
-    if (!/[A-Z]/.test(password)) {
-      errors.push("รหัสผ่านต้องมีตัวพิมพ์ใหญ่อย่างน้อย 1 ตัว");
-    }
-    if (!/[a-z]/.test(password)) {
-      errors.push("รหัสผ่านต้องมีตัวพิมพ์เล็กอย่างน้อย 1 ตัว");
-    }
-    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
-      errors.push("รหัสผ่านต้องมีตัวอักษรพิเศษอย่างน้อย 1 ตัว");
-    }
-    return errors;
-  };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -54,7 +37,7 @@ export default function Login() {
 
   const handleFacebookLogin = () => {
     router.push("/");
-  };  
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -212,7 +195,7 @@ export default function Login() {
                 type="button"
                 className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
                 onClick={handleGoogleLogin}
-                  >
+              >
                 <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                   <path
                     fill="#4285F4"
