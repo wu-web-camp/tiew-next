@@ -1,6 +1,5 @@
 const IntroductionPage = () => {
   return (
-    // ...existing code...
     <div>
       <h1 className="text-2xl font-bold">Introduction</h1>
       <div className="space-y-4 mt-4">
