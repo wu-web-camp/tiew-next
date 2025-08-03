@@ -1,7 +1,7 @@
 const IntroductionPage = () => {
   return (
     <div>
-      <h1 className="text-2xl font-bold">Introduction</h1>
+      <h1 className="text-2xl font-bold text-[#A54141]">Introduction</h1>
       <div className="space-y-4 mt-4">
         <p>
           Welcome to the future of travel planning. Dreaming of your next

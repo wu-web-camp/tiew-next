@@ -45,10 +45,10 @@ export default async function ContributorPage() {
   const contributors = await getContributors();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#A54141]/10 to-[#A54141]/5 py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-[#A54141] mb-4">
             Contributors
           </h1>
           <p className="text-lg text-gray-600">
@@ -63,7 +63,7 @@ export default async function ContributorPage() {
               className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6"
             >
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#A54141] to-[#8B3636] rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-xl">
                     {contributor.name.charAt(0).toUpperCase()}
                   </span>
