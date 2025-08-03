@@ -78,17 +78,17 @@ const clients = [
 
 export default function BrandPage() {
   return (
-    <div className="min-h-[80vh] bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       {/* Navigation Bar */}
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Page Heading */}
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "#8B3636" }}>
             Some of our valuable clients
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Trusted by leading companies worldwide to deliver exceptional results
           </p>
         </div>
@@ -209,16 +209,16 @@ export default function BrandPage() {
         </div>
 
         {/* Additional Content */}
-        <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+        <div className="mt-20 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Ready to join our client roster?
           </h2>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto text-base leading-relaxed">
+          <p className="text-gray-600 mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
             Work with the same world-class talent that powers these industry leaders.
           </p>
-          <Link href="#" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <Link href="#" className="inline-flex items-center px-8 py-4 text-white font-semibold rounded-lg hover:bg-red-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ color: "#8B3636" }}>
             Get Started
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </Link>
