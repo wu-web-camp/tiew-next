@@ -55,6 +55,13 @@ export default function Header() {
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#A54141] transition-all duration-200 group-hover:w-full"></div>
               </Link>
               <Link 
+                href="/client" 
+                className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
+              >
+                ลูกค้า
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#A54141] transition-all duration-200 group-hover:w-full"></div>
+              </Link>
+              <Link 
                 href="/my-trip" 
                 className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
               >
