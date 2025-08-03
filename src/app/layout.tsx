@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { TanstackProvider } from "@/provider/tanstack";
+import { ThemeProvider } from "@/provider/theme";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
