@@ -20,6 +20,15 @@ A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. User
 - **Modern UI**: Clean, intuitive interface with smooth animations
 - **Theme Persistence**: Theme preference saved in localStorage
 
+## Recent Updates
+
+### Build Fixes (Latest)
+- ✅ Fixed unescaped apostrophe in introduction page (`We've` → `We&apos;ve`)
+- ✅ Replaced `<img>` with Next.js `<Image>` component for better performance
+- ✅ Removed unused `error` variable in `useTripPlanner` hook
+- ✅ All ESLint warnings and errors resolved
+- ✅ Build now passes successfully with no errors or warnings
+
 ## Getting Started
 
 ### Environment Setup
