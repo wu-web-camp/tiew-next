@@ -3,6 +3,7 @@
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 import ThemeToggle from "./ThemeToggle";
+import ButtonLanguage from "./button-language";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
@@ -27,7 +28,7 @@ export default function Header() {
               </div>
               <div className="hidden sm:flex items-center space-x-4">
                 <button className="hover:text-[#A54141] transition-colors">ช่วยเหลือ</button>
-                <button className="hover:text-[#A54141] transition-colors">ภาษาไทย</button>
+                <ButtonLanguage />
               </div>
             </div>
           </div>
@@ -119,6 +120,10 @@ export default function Header() {
                     <Link href="/about" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5F0F0] hover:text-[#A54141]">
                       เกี่ยวกับเรา
                     </Link>
+                    <Link href="/about/introduction" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5F0F0] hover:text-[#A54141]">
+                      แนะนำเว็บไซต์
+                    </Link>
+
                     <Link href="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5F0F0] hover:text-[#A54141]">
                       ติดต่อเรา
                     </Link>
