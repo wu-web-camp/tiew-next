@@ -1,19 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { TanstackProvider } from "@/provider/tanstack";
 import { ThemeProvider } from "@/provider/theme";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export default function RootLayout({
   children,
@@ -24,8 +13,9 @@ export default function RootLayout({
     <TanstackProvider>
       <ThemeProvider>
         <html lang="en">
+
           <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-blue-100`}
+            className="antialiased min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-blue-100 font-sans"
           >
             <Header />
             <main className="flex-1 flex flex-col px-4 sm:px-8 md:px-16 py-8 sm:py-12">

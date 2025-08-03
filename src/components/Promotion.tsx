@@ -183,52 +183,52 @@ export default function Promotion() {
 
         {/* Main Content - Promotion Cards Grid */}
         <div className="flex-1">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
             {promotionCards.map((card) => (
               <div
                 key={card.id}
-                className={`${card.background} rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200`}
+                className={`${card.background} rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200 min-h-[320px] flex flex-col`}
               >
                 {/* Card Graphic */}
-                <div className="mb-4">
-                  <div className="bg-white/50 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold text-gray-800 mb-2">
+                <div className="mb-4 flex-shrink-0 h-20">
+                  <div className="bg-white/50 rounded-lg p-4 text-center h-full flex flex-col justify-center">
+                    <div className="text-2xl font-bold text-gray-800 mb-1">
                       {card.graphic}
                     </div>
-                    {card.couponCode && (
-                      <div className="text-sm text-gray-600">
-                        Code: {card.couponCode}
-                      </div>
-                    )}
+                    <div className="text-sm text-gray-600 min-h-[16px]">
+                      {card.couponCode ? `Code: ${card.couponCode}` : '\u00A0'}
+                    </div>
                   </div>
                 </div>
 
                 {/* Card Content */}
-                <div className="space-y-3">
-                  <h3 className="font-semibold text-gray-900 text-lg leading-tight">
-                    {card.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {card.description}
-                  </p>
-                  
-                  {/* Card Details */}
-                  <div className="flex flex-wrap gap-2 text-xs text-gray-500">
-                    {card.expiresIn && (
-                      <span className="bg-white/50 px-2 py-1 rounded">
-                        Expires in {card.expiresIn}
-                      </span>
-                    )}
-                    {card.minSpend && (
-                      <span className="bg-white/50 px-2 py-1 rounded">
-                        Min. spend {card.minSpend}
-                      </span>
-                    )}
+                <div className="flex-1 flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <h3 className="font-semibold text-gray-900 text-lg leading-tight min-h-[56px] flex items-start">
+                      {card.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed min-h-[40px]">
+                      {card.description}
+                    </p>
+                    
+                    {/* Card Details */}
+                    <div className="flex flex-wrap gap-2 text-xs text-gray-500 min-h-[24px]">
+                      {card.expiresIn && (
+                        <span className="bg-white/50 px-2 py-1 rounded">
+                          Expires in {card.expiresIn}
+                        </span>
+                      )}
+                      {card.minSpend && (
+                        <span className="bg-white/50 px-2 py-1 rounded">
+                          Min. spend {card.minSpend}
+                        </span>
+                      )}
+                    </div>
                   </div>
 
                   {/* Action Button */}
                   <button
-                    className={`w-full ${card.buttonColor} text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 mt-4`}
+                    className={`w-full ${card.buttonColor} text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 mt-4 flex-shrink-0`}
                   >
                     {card.buttonText}
                   </button>

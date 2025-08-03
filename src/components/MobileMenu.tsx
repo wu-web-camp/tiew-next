@@ -4,7 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
-export default function MobileMenu() {
+interface MobileMenuProps {
+  hasNewPromotions: boolean;
+  onNotificationClick: () => void;
+}
+
+export default function MobileMenu({ hasNewPromotions, onNotificationClick }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -112,9 +117,25 @@ export default function MobileMenu() {
 
             {/* Action Buttons */}
             <div className="pt-4 border-t border-gray-200 space-y-3">
-              <button className="w-full text-left text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-                ติดต่อเรา
+              {/* Notification Bell - Mobile */}
+              <button 
+                onClick={() => {
+                  onNotificationClick();
+                  setIsOpen(false);
+                }}
+                className="w-full text-left text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center justify-between"
+              >
+                <span>การแจ้งเตือน</span>
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                  </svg>
+                  {hasNewPromotions && (
+                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                  )}
+                </div>
               </button>
+              
               <button className="w-full text-left text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                 เข้าสู่ระบบ
               </button>
