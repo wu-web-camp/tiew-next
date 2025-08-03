@@ -1,10 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 import ThemeToggle from "./ThemeToggle";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
-  return (
+  const pathname = usePathname();
 
+  const isActive = (path: string) => {
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
+    return false;
+  };
+
+  return (
     <header className="bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto">
         {/* Top Bar */}
@@ -21,7 +31,6 @@ export default function Header() {
               </div>
             </div>
           </div>
-
         </div>
 
         {/* Main Header */}
@@ -44,34 +53,62 @@ export default function Header() {
             <nav className="hidden lg:flex space-x-8">
               <Link 
                 href="/" 
-                className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group ${
+                  isActive("/") 
+                    ? "text-[#A54141] bg-[#F5F0F0]" 
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}
               >
                 หน้าแรก
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#A54141] transition-all duration-200 group-hover:w-full"></div>
+                <div className={`absolute bottom-0 left-0 h-0.5 bg-[#A54141] transition-all duration-200 ${
+                  isActive("/") ? "w-full" : "w-0 group-hover:w-full"
+                }`}></div>
               </Link>
               <Link 
                 href="/trip-planner" 
-                className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group ${
+                  isActive("/trip-planner") 
+                    ? "text-[#A54141] bg-[#F5F0F0]" 
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}
               >
                 วางแผนทริป
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#A54141] transition-all duration-200 group-hover:w-full"></div>
+                <div className={`absolute bottom-0 left-0 h-0.5 bg-[#A54141] transition-all duration-200 ${
+                  isActive("/trip-planner") ? "w-full" : "w-0 group-hover:w-full"
+                }`}></div>
               </Link>
               <Link 
-                href="/client" 
-                className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
+                href="/customers" 
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group ${
+                  isActive("/customers") 
+                    ? "text-[#A54141] bg-[#F5F0F0]" 
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}
               >
                 ลูกค้า
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#A54141] transition-all duration-200 group-hover:w-full"></div>
+                <div className={`absolute bottom-0 left-0 h-0.5 bg-[#A54141] transition-all duration-200 ${
+                  isActive("/customers") ? "w-full" : "w-0 group-hover:w-full"
+                }`}></div>
               </Link>
               <Link 
                 href="/my-trip" 
-                className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group ${
+                  isActive("/my-trip") 
+                    ? "text-[#A54141] bg-[#F5F0F0]" 
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}
               >
                 ทริปของฉัน
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#A54141] transition-all duration-200 group-hover:w-full"></div>
+                <div className={`absolute bottom-0 left-0 h-0.5 bg-[#A54141] transition-all duration-200 ${
+                  isActive("/my-trip") ? "w-full" : "w-0 group-hover:w-full"
+                }`}></div>
               </Link>
               <div className="relative group">
-                <button className="text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">
+                <button className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center ${
+                  isActive("/about") || isActive("/contact") || isActive("/help")
+                    ? "text-[#A54141] bg-[#F5F0F0]" 
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}>
                   ข้อมูลเพิ่มเติม
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
