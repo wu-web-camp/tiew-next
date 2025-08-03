@@ -160,7 +160,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-blue-600 transition">
-                  เกี่ยวกับ Tiew-Next.com
+                  เกี่ยวกับ Tiew-Next
                 </a>
               </li>
               <li>
