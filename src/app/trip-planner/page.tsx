@@ -11,9 +11,9 @@ export default function TripPlanner() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
-    const location = formData.get("location") as string;
-    const type = formData.get("type") as string || "general";
-    const lang = formData.get("lang") as string || "th";
+    const location = formData.get("destination") as string;
+    const type = formData.get("interests") as string || "general";
+    const lang = "th"; // Default to Thai as per the hook
 
     mutate.mutate({ location, type, lang });
   };
@@ -34,33 +34,22 @@ export default function TripPlanner() {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="location" className="block text-sm font-medium text-[#A54141] mb-1">Location</label>
+            <label htmlFor="destination" className="block text-sm font-medium text-[#A54141] mb-1">Destination</label>
             <input
-              id="location"
-              name="location"
+              id="destination"
+              name="destination"
               type="text"
               required
               className="mt-1 block w-full rounded-lg border border-[#A54141]/20 bg-[#A54141]/5 px-4 py-2 text-gray-700 focus:ring-2 focus:ring-[#A54141]/20 focus:border-[#A54141]/40 outline-none transition"
             />
           </div>
           <div>
-            <label htmlFor="type" className="block text-sm font-medium text-[#A54141] mb-1">Type</label>
+            <label htmlFor="interests" className="block text-sm font-medium text-[#A54141] mb-1">Interests</label>
             <input
-              id="type"
-              name="type"
+              id="interests"
+              name="interests"
               type="text"
-              placeholder="e.g. adventure, cultural, relaxation"
-              className="mt-1 block w-full rounded-lg border border-[#A54141]/20 bg-[#A54141]/5 px-4 py-2 text-gray-700 focus:ring-2 focus:ring-[#A54141]/20 focus:border-[#A54141]/40 outline-none transition"
-            />
-          </div>
-          <div>
-            <label htmlFor="lang" className="block text-sm font-medium text-[#A54141] mb-1">Language</label>
-            <input
-              id="lang"
-              name="lang"
-              type="text"
-              placeholder="e.g. th, en"
-              defaultValue="th"
+              placeholder="e.g. nature, food, history"
               className="mt-1 block w-full rounded-lg border border-[#A54141]/20 bg-[#A54141]/5 px-4 py-2 text-gray-700 focus:ring-2 focus:ring-[#A54141]/20 focus:border-[#A54141]/40 outline-none transition"
             />
           </div>

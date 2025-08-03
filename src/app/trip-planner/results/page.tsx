@@ -42,6 +42,37 @@ export default function TripResults() {
     const [data, setData] = React.useState<TripPlannerResponse | null>(null);
     const [isLoading, setIsLoading] = React.useState(true);
 
+    const addToGoogleCalendar = (tripData: TripPlannerResponse) => {
+        if (!tripData.data) return;
+
+        const startDate = new Date();
+        const endDate = new Date();
+        endDate.setDate(endDate.getDate() + 7); // Default to 7 days
+
+        const eventTitle = `Trip: ${tripData.data.location || 'Destination'}`;
+        
+        // Create detailed description from trip data
+        let eventDescription = `Trip Details:\n`;
+        eventDescription += `- Destination: ${tripData.data.location || 'Destination'}\n`;
+        eventDescription += `- Type: ${tripData.data.type || 'General travel'}\n`;
+        
+        if (tripData.data.structuredData) {
+            if (tripData.data.structuredData.overview) {
+                eventDescription += `- Overview: ${tripData.data.structuredData.overview.substring(0, 200)}...\n`;
+            }
+            if (tripData.data.structuredData.budgetEstimation) {
+                eventDescription += `- Budget: ${tripData.data.structuredData.budgetEstimation}\n`;
+            }
+            if (tripData.data.structuredData.accommodations) {
+                eventDescription += `- Accommodations: ${tripData.data.structuredData.accommodations.substring(0, 100)}...\n`;
+            }
+        }
+
+        const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z/${endDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z&details=${encodeURIComponent(eventDescription)}`;
+
+        window.open(googleCalendarUrl, '_blank');
+    };
+
     React.useEffect(() => {
         // Read data from sessionStorage
         try {
@@ -212,13 +243,21 @@ export default function TripResults() {
                 )}
 
                 {/* Footer */}
-                <div className="text-center py-8">
+                <div className="text-center py-8 space-y-4">
                     <Link
                         href="/trip-planner"
                         className="inline-flex items-center px-6 py-3 rounded-lg bg-[#A54141] text-white font-medium hover:bg-[#A54141]/80 transition"
                     >
                         ← Plan Another Trip
                     </Link>
+                    <div className="mt-4">
+                        <button
+                            onClick={() => addToGoogleCalendar(data)}
+                            className="inline-flex items-center px-6 py-3 rounded-lg bg-green-500 text-white font-medium hover:bg-green-600 transition"
+                        >
+                            เพิ่มแผนไปใน Google Calendar
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
