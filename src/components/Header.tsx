@@ -79,6 +79,9 @@ export default function Header() {
                 </button>
                 <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   <div className="py-2">
+                  <Link href="/gallery-trip" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5F0F0] hover:text-[#A54141]">
+                      แกลลอรี่
+                    </Link>
                     <Link href="/about" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5F0F0] hover:text-[#A54141]">
                       เกี่ยวกับเรา
                     </Link>
