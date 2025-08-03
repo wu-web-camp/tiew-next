@@ -7,6 +7,7 @@ export default function Header() {
         <div className="flex items-center gap-8">
           <Link href="/" className="text-lg font-semibold text-blue-500 tracking-tight">Trip Planner</Link>
           <Link href="/my-trip" className="text-gray-500 hover:text-blue-400 transition">My Trip</Link>
+          <Link href="/client" className="text-gray-500 hover:text-blue-400 transition">Client</Link>
         </div>
         <span className="rounded px-3 py-1 bg-blue-50 text-blue-400 text-lg">☀️</span>
       </nav>
