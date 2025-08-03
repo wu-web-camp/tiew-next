@@ -3,9 +3,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import { usePathname } from "next/navigation";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
+    return false;
+  };
 
   return (
     <div className="lg:hidden">
@@ -61,21 +69,44 @@ export default function MobileMenu() {
             <nav className="space-y-3">
               <Link
                 href="/"
-                className="block text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  isActive("/")
+                    ? "text-[#A54141] bg-[#F5F0F0]"
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 หน้าแรก
               </Link>
               <Link
                 href="/trip-planner"
-                className="block text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  isActive("/trip-planner")
+                    ? "text-[#A54141] bg-[#F5F0F0]"
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 วางแผนทริป
               </Link>
               <Link
+                href="/customers"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  isActive("/customers")
+                    ? "text-[#A54141] bg-[#F5F0F0]"
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                ลูกค้า
+              </Link>
+              <Link
                 href="/my-trip"
-                className="block text-gray-700 hover:text-[#A54141] px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  isActive("/my-trip")
+                    ? "text-[#A54141] bg-[#F5F0F0]"
+                    : "text-gray-700 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 ทริปของฉัน
@@ -83,25 +114,43 @@ export default function MobileMenu() {
               
               {/* Additional Info Dropdown */}
               <div className="space-y-2">
-                <div className="text-gray-700 px-3 py-2 text-base font-medium">ข้อมูลเพิ่มเติม</div>
+                <div className={`px-3 py-2 text-base font-medium ${
+                  isActive("/about") || isActive("/contact") || isActive("/help")
+                    ? "text-[#A54141] bg-[#F5F0F0]"
+                    : "text-gray-700"
+                }`}>
+                  ข้อมูลเพิ่มเติม
+                </div>
                 <div className="pl-4 space-y-2">
                   <Link
                     href="/about"
-                    className="block text-gray-600 hover:text-[#A54141] px-3 py-2 rounded-md text-sm transition-colors duration-200"
+                    className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
+                      isActive("/about")
+                        ? "text-[#A54141] bg-[#F5F0F0]"
+                        : "text-gray-600 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     เกี่ยวกับเรา
                   </Link>
                   <Link
                     href="/contact"
-                    className="block text-gray-600 hover:text-[#A54141] px-3 py-2 rounded-md text-sm transition-colors duration-200"
+                    className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
+                      isActive("/contact")
+                        ? "text-[#A54141] bg-[#F5F0F0]"
+                        : "text-gray-600 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     ติดต่อเรา
                   </Link>
                   <Link
                     href="/help"
-                    className="block text-gray-600 hover:text-[#A54141] px-3 py-2 rounded-md text-sm transition-colors duration-200"
+                    className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
+                      isActive("/help")
+                        ? "text-[#A54141] bg-[#F5F0F0]"
+                        : "text-gray-600 hover:text-[#A54141] hover:bg-[#F5F0F0]"
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     ศูนย์ช่วยเหลือ
