@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeroActionButtons from "../components/HeroActionButtons";
+import Contact from "../components/Contact";
 
 export default function Home() {
   return (
@@ -78,6 +79,17 @@ export default function Home() {
               ดูตัวอย่าง
             </button>
           </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">ติดต่อเรา</h2>
+            <p className="text-gray-600 text-lg">เราพร้อมให้บริการและตอบคำถามของคุณ</p>
+          </div>
+          <Contact />
         </div>
       </section>
     </div>
