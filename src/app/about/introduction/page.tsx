@@ -6,7 +6,7 @@ const IntroductionPage = () => {
   const [language] = useAtom(languageAtom);
   if (language === "th") {
     return <><div>
-      <h1 className="text-2xl font-bold">Introduction</h1>
+      <h1 className="text-2xl font-bold">ยินดีต้อนรับเข้าสู่ Tiewnext</h1>
       <div className="space-y-4 mt-4">
         <p>
           ยินดีต้อนรับสู่อนาคตแห่งการวางแผนการเดินทาง
@@ -28,7 +28,7 @@ const IntroductionPage = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">Introduction</h1>
+      <h1 className="text-2xl font-bold">Wellcome to Tiewnext</h1>
       <div className="space-y-4 mt-4">
         <p>
           Welcome to the future of travel planning. Dreaming of your next
