@@ -4,6 +4,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
+
     <header className="bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto">
         {/* Top Bar */}
@@ -20,6 +21,7 @@ export default function Header() {
               </div>
             </div>
           </div>
+
         </div>
 
         {/* Main Header */}
