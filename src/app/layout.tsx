@@ -1,8 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Sarabun } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { TanstackProvider } from "@/provider/tanstack";
+import { ThemeProvider } from "@/provider/theme";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +15,14 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const sarabun = Sarabun({
+  variable: "--font-sarabun",
+  subsets: ["thai", "latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+
 
 export default function RootLayout({
   children,
