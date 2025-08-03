@@ -24,9 +24,17 @@ export default function Header() {
             Contibutor
           </Link>
         </div>
-        <span className="rounded px-3 py-1 bg-blue-50 text-blue-400 text-lg">
-          ☀️
-        </span>
+        <div className="flex items-center gap-4">
+          <span className="rounded px-3 py-1 bg-blue-50 text-blue-400 text-lg">
+            ☀️
+          </span>
+          <Link
+            href="/signup"
+            className="px-4 py-2 bg-gradient-to-r from-red-600 to-[#A54141] text-white rounded-lg hover:from-red-700 hover:to-[#8A3535] active:shadow-lg active:shadow-red-300/50 transition-all duration-200 font-medium"
+          >
+            Signup
+          </Link>
+        </div>
       </nav>
     </header>
   );
