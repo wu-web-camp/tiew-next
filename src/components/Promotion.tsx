@@ -20,59 +20,59 @@ const promotionCards: PromotionCard[] = [
     id: '1',
     title: 'Up to $1,200 Off Hotels',
     description: 'Expires in 3 days | Promo Code: AGODADEAL5',
-    background: 'bg-blue-100',
+    background: 'bg-[#F8F9FA]',
     couponCode: 'AGODADEAL5',
     expiresIn: '3 days',
     buttonText: 'CLAIM COUPON',
-    buttonColor: 'bg-blue-500 hover:bg-blue-600',
+    buttonColor: 'bg-[#A54141] hover:bg-[#8B3535]',
     graphic: 'UP TO 5% OFF'
   },
   {
     id: '2',
     title: 'Up to $1,600 Off Hotels',
     description: 'Min. spend ฿3,750 | Expires in 3 days | Promo Code: AGODADEAL8',
-    background: 'bg-green-100',
+    background: 'bg-[#F8F9FA]',
     couponCode: 'AGODADEAL8',
     expiresIn: '3 days',
     minSpend: '฿3,750',
     buttonText: 'CLAIM COUPON',
-    buttonColor: 'bg-blue-500 hover:bg-blue-600',
+    buttonColor: 'bg-[#A54141] hover:bg-[#8B3535]',
     graphic: 'UP TO 8% OFF'
   },
   {
     id: '3',
     title: 'Limited Time Price Drop - Up to 30%',
     description: 'Unlock special hotel rates at your dream destination. Book now before prices go up!',
-    background: 'bg-yellow-100',
+    background: 'bg-[#F8F9FA]',
     buttonText: 'ACTIVATE NOW',
-    buttonColor: 'bg-blue-500 hover:bg-blue-600',
+    buttonColor: 'bg-[#A54141] hover:bg-[#8B3535]',
     graphic: 'UNLOCK DEALS'
   },
   {
     id: '4',
     title: 'Thailand Exclusive - KTC x Trip Planner',
     description: 'Sign up now to upgrade to VIP Platinum and get exclusive travel benefits',
-    background: 'bg-blue-200',
+    background: 'bg-[#F8F9FA]',
     buttonText: 'SIGN UP NOW',
-    buttonColor: 'bg-blue-600 hover:bg-blue-700',
+    buttonColor: 'bg-[#A54141] hover:bg-[#8B3535]',
     graphic: 'VIP CARD'
   },
   {
     id: '5',
     title: 'Weekend Flash Sale - Up to 25% Off',
     description: 'Travel like a VIP! Get exclusive VIP rates this weekend and save on your next adventure',
-    background: 'bg-indigo-100',
+    background: 'bg-[#F8F9FA]',
     buttonText: 'BOOK NOW',
-    buttonColor: 'bg-indigo-500 hover:bg-indigo-600',
+    buttonColor: 'bg-[#A54141] hover:bg-[#8B3535]',
     graphic: 'VIP FLASH RATES'
   },
   {
     id: '6',
     title: 'Save On Hotels & Save Wildlife',
     description: 'We\'ll donate $1 to WWF for every reservation you make!',
-    background: 'bg-green-200',
+    background: 'bg-[#F8F9FA]',
     buttonText: 'BOOK & DONATE',
-    buttonColor: 'bg-green-600 hover:bg-green-700',
+    buttonColor: 'bg-[#A54141] hover:bg-[#8B3535]',
     graphic: 'ECO DEALS'
   }
 ];
@@ -107,8 +107,11 @@ export default function Promotion() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-purple-600 to-purple-800 text-white py-16 px-6 rounded-2xl mb-8 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+      <div className="relative bg-gradient-to-r from-[#A54141] to-[#8B3535] text-white py-16 px-6 rounded-2xl mb-8 overflow-hidden">
+        {/* Simple dot pattern overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.3)_1px,transparent_0)] bg-[length:20px_20px]"></div>
+        </div>
         
         {/* Left Character */}
         <div className="absolute left-8 top-1/2 transform -translate-y-1/2">
