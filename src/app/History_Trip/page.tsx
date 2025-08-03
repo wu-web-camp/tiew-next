@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 const tripHistory = [
   {
@@ -246,9 +247,11 @@ export default function TripHistory() {
               <div className="flex flex-col lg:flex-row">
                 {/* Image Section */}
                 <div className="lg:w-1/3 relative overflow-hidden">
-                  <img
+                  <Image
                     src={trip.image}
                     alt={trip.tripName}
+                    width={400}
+                    height={256}
                     className="h-64 lg:h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4">

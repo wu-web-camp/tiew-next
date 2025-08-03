@@ -388,8 +388,8 @@ export default function SubscribePage() {
                   />
                 </svg>
                 <span className="text-gray-700">
-                  เข้าถึงโหมดวางแผน "Q3 Pro" สำหรับทริประดับซับซ้อน เช่น
-                  เที่ยวหลายประเทศ
+                  เข้าถึงโหมดวางแผน &ldquo;Q3 Pro&rdquo; สำหรับทริประดับซับซ้อน
+                  เช่น เที่ยวหลายประเทศ
                 </span>
               </div>
               <div className="flex items-start">

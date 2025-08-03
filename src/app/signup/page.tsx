@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
@@ -162,9 +163,11 @@ export default function SignupPage() {
                 <div className="flex items-center space-x-4">
                   <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center border-2 border-dashed border-gray-300">
                     {formData.profilePicture ? (
-                      <img
+                      <Image
                         src={URL.createObjectURL(formData.profilePicture)}
                         alt="Profile preview"
+                        width={80}
+                        height={80}
                         className="w-full h-full rounded-full object-cover"
                       />
                     ) : (

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 const trips = [
   {
@@ -89,9 +90,11 @@ export default function MyTrip() {
             >
               {/* Image Container */}
               <div className="relative overflow-hidden rounded-t-3xl">
-                <img
+                <Image
                   src={trip.image}
                   alt={trip.name}
+                  width={400}
+                  height={224}
                   className="h-56 w-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

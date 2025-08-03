@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 const tripDetail = {
   id: 1,
@@ -159,9 +160,11 @@ export default function TripDetail() {
         {/* Image Gallery */}
         <div className="mb-8">
           <div className="relative overflow-hidden rounded-3xl shadow-2xl mb-4">
-            <img
+            <Image
               src={tripDetail.images[currentImageIndex]}
               alt={`${tripDetail.name} - Image ${currentImageIndex + 1}`}
+              width={800}
+              height={384}
               className="w-full h-96 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -206,9 +209,11 @@ export default function TripDetail() {
                     : "border-transparent"
                 }`}
               >
-                <img
+                <Image
                   src={image}
                   alt={`Thumbnail ${index + 1}`}
+                  width={80}
+                  height={80}
                   className="w-20 h-20 object-cover"
                 />
               </button>
