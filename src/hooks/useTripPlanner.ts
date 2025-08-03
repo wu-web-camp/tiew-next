@@ -98,7 +98,7 @@ export const useTripPlanner = () => {
     onSuccess: (data) => {
       setData(data)
     },
-    onError: (error) => {
+    onError: () => {
       setData(null)
     },
     retry: (failureCount, error) => {
