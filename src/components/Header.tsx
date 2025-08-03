@@ -102,7 +102,6 @@ export default function Header() {
           </div>
         </div>
       </div>
->>>>>>> c5e93fb (create header)
     </header>
   );
 }

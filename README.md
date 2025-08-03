@@ -73,6 +73,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ```mermaid
 flowchart TD
 <<<<<<< HEAD
+<<<<<<< HEAD
     A[Home Page: Trip Planner] -->|Fill Form| B[Trip Plan Generation]
     B -->|Show Plan| A
     A -->|Click 'My Trip'| C[My Trip Page]
@@ -81,6 +82,8 @@ flowchart TD
     A -->|View Contributors| E[Contributors Page]
     E -->|List Contributors| F[Contributor Cards]
 =======
+=======
+>>>>>>> c5e93fbbda1bda30a2707ea5741ae46e7bc8c6ab
     A[Home Page: Hero Section] -->|Click Action Buttons| B[Sign Up/Login/Contact]
     A -->|Click 'วางแผนทริป'| C[Trip Planner Page]
     C -->|Fill Form| D[Trip Plan Generation]
@@ -90,11 +93,15 @@ flowchart TD
     E -->|Back to Home| A
     A -->|Click Theme Button| G[Switch Theme]
     G -->|Light/Dark| A
+<<<<<<< HEAD
 >>>>>>> c5e93fb (create header)
+=======
+>>>>>>> c5e93fbbda1bda30a2707ea5741ae46e7bc8c6ab
     %% UI Section
     %% Backend (future): D
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## Features
 
@@ -109,6 +116,8 @@ flowchart TD
 - Responsive grid layout with contributor cards
 - Automatic sorting and error handling
 =======
+=======
+>>>>>>> c5e93fbbda1bda30a2707ea5741ae46e7bc8c6ab
 ## Color Scheme
 
 The application uses a custom red theme with the following color palette:
@@ -146,7 +155,10 @@ The application uses a custom red theme with the following color palette:
 - **Secondary**: #A54141 border with #A54141 text
 - **Tertiary**: Text-only with hover effects
 - **Consistent Spacing**: Uniform padding and margins
+<<<<<<< HEAD
 >>>>>>> c5e93fb (create header)
+=======
+>>>>>>> c5e93fbbda1bda30a2707ea5741ae46e7bc8c6ab
 
 ---
 
