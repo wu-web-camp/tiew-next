@@ -4,7 +4,7 @@ export default function TripPlanner() {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="max-w-md w-full space-y-8 p-10 rounded-2xl shadow-lg bg-white/90 border border-blue-100">
-        <h1 className="text-2xl font-light text-blue-500 text-center mb-8 tracking-tight">Plan your next trip</h1>
+        <h1 className="text-2xl font-light text-blue-500 text-center mb-8 tracking-tight">Plan your next tri onpen pr</h1>
         <form className="space-y-6">
           <div>
             <label htmlFor="start" className="block text-sm font-medium text-blue-400 mb-1">Starting Location</label>
