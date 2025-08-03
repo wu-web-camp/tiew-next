@@ -31,15 +31,15 @@ const trips = [
 
 export default function MyTrip() {
   return (
-      <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-rose-50">
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
         <div className="max-w-7xl mx-auto py-20 px-6">
           {/* Header Section */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-100 text-red-600 rounded-full text-sm font-medium mb-4">
-              <span className="text-red-500">📍</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium mb-4">
+              <span className="text-orange-600">📍</span>
               Travel Collection
             </div>
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-red-600 via-rose-500 to-pink-500 bg-clip-text text-transparent mb-4">
+            <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 bg-clip-text text-transparent mb-4">
               My Amazing Trips
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -70,31 +70,31 @@ export default function MyTrip() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     {/* Floating Price Badge */}
-                    <div className="absolute top-4 right-4 bg-red-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    <div className="absolute top-4 right-4 bg-orange-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
                       ฿{trip.price.toLocaleString()}
                     </div>
                   </div>
 
                   {/* Content Section */}
                   <div className="p-8">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-red-600 transition-colors duration-300">
+                    <h2 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors duration-300">
                       {trip.name}
                     </h2>
 
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center gap-3 text-gray-600">
-                        <span className="text-red-400 text-lg">📍</span>
+                        <span className="text-orange-500 text-lg">📍</span>
                         <span className="text-base">{trip.location}</span>
                       </div>
 
                       <div className="flex items-center gap-3 text-gray-600">
-                        <span className="text-red-400 text-lg">📅</span>
+                        <span className="text-orange-500 text-lg">📅</span>
                         <span className="text-sm">{trip.dates}</span>
                       </div>
                     </div>
 
                     {/* Action Button */}
-                    <button className="w-full group/btn relative overflow-hidden bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl">
+                    <button className="w-full group/btn relative overflow-hidden bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl">
                       <div className="flex items-center justify-center gap-2 relative z-10">
                         <span className="text-lg">👁️</span>
                         <span>View Details</span>
@@ -104,7 +104,7 @@ export default function MyTrip() {
                   </div>
 
                   {/* Decorative Elements */}
-                  <div className="absolute top-0 left-0 w-2 h-16 bg-gradient-to-b from-red-400 to-rose-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-0 left-0 w-2 h-16 bg-gradient-to-b from-orange-500 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
             ))}
           </div>
@@ -112,9 +112,9 @@ export default function MyTrip() {
           {/* Bottom Decoration */}
           <div className="mt-20 text-center">
             <div className="inline-flex items-center gap-2 text-gray-400">
-              <div className="w-8 h-px bg-gradient-to-r from-transparent to-red-200"></div>
+              <div className="w-8 h-px bg-gradient-to-r from-transparent to-orange-200"></div>
               <span className="text-sm">More adventures await</span>
-              <div className="w-8 h-px bg-gradient-to-l from-transparent to-red-200"></div>
+              <div className="w-8 h-px bg-gradient-to-l from-transparent to-orange-200"></div>
             </div>
           </div>
         </div>
