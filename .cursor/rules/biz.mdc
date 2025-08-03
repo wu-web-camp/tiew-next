@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+# Business Role Rules
+A minimal, relaxed travel planning app built with Next.js and Tailwind CSS. Users can plan trips, view their saved trips, and enjoy a clean, modern, travel-inspired interface.

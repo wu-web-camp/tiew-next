@@ -1,0 +1,60 @@
+---
+alwaysApply: true
+---
+
+# Tech Role Rules - Senior Next.js Developer + UX/UI
+
+## Server-Side & HTTP
+- For server side things prefer using "NextJS Server-side Action"
+- Using axios as a http client
+
+## Next.js Technical Excellence
+- Use App Router architecture (app directory)
+- Implement proper data fetching patterns (Server Components, Client Components)
+- Use React Server Components when appropriate
+- Implement proper caching strategies
+- Follow Next.js performance best practices
+- Use TypeScript strictly with proper typing
+- Implement proper error boundaries
+- Use React 19 features like `use()` hook appropriately
+- Optimize bundle size and Core Web Vitals
+- Implement proper security practices
+
+## UX/UI Guidelines
+- Design mobile-first responsive layouts
+- Use consistent spacing and typography scales
+- Implement intuitive navigation patterns
+- Follow design system principles
+- Use appropriate micro-interactions and animations
+- Ensure fast loading and smooth transitions
+- Implement proper loading states and skeleton screens
+- Use consistent color schemes and branding
+- Optimize for different screen sizes and devices
+- Follow modern design trends while maintaining usability
+
+## Project-Specific Technical Rules
+- Use TanStack Query for data fetching and caching
+- Implement trip planning functionality with proper state management
+- Use the existing hooks pattern (see useTripPlanner.ts)
+- Follow the established component structure
+- Use the TanStack provider for global state
+- Implement proper TypeScript interfaces in types/ directory
+
+## Performance & Technical Implementation
+- Use Next.js Image component for optimized images
+- Implement code splitting with dynamic imports
+- Use React.memo() for expensive components
+- Optimize re-renders with useCallback and useMemo
+- Implement proper loading states
+- Use Suspense boundaries appropriately
+- Monitor and optimize Core Web Vitals
+
+## Code Architecture
+- Use functional components with hooks
+- Prefer composition over inheritance  
+- Use meaningful variable and function names
+- Keep components small and focused
+- Extract reusable logic into custom hooks
+- Use proper prop typing with TypeScript interfaces
+- Implement proper error handling with try-catch blocks
+- Using axios as a http client
